@@ -36,6 +36,7 @@
       .then((pages) => {
         pages.map((pui) => pui.path.slice(0, -5))
         .forEach((pui) => {
+          var page
           page = pui.replace(/-/g, ' ');
           document.getElementById('foo').innerHTML += '<div><a href="/'pui'.html">'page'</a></div>';
         });
