@@ -22,7 +22,7 @@
   }
 </style>
 <-- code by @Raihan142857(on Scratch), I dont know JS so this was a major help -->
-<script=Javascript>
+<script type="text/Javascript">
       function getPages(username, reponame, branch = 'main') {
       return new Promise((resolve, reject) => {
         fetch(`https://api.github.com/repos/${username}/${reponame}/git/trees/${branch}?recursive=1`)
@@ -35,7 +35,12 @@
       });
     }
     getPages('Steve0Greatness', 'Blog')
-    .then((pages) => {
-      //woking on it :)
+      .then((pages) => {
+        pages.map((page) => page.path.slice(0, -5))
+        .forEach((page) => {
+          if(page == 'index') page = '';
+          page = page.replace(/-/g, ' ');
+          document.getElementById('contents').innerHTML += page[0].toUpperCase() + page.slice(1) + '<a href="/'page'.html">';
+        });
     });
   </script>
