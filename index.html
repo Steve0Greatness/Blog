@@ -34,6 +34,7 @@
     }
     getPages('Steve0Greatness', 'Blog')
       .then((pages) => {
+        if(page == 'index') page = '';
         pages.map((pui) => pui.path.slice(0, -5))
         .forEach((pui) => {
           var page
