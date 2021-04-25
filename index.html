@@ -36,10 +36,9 @@
     }
     getPages('Steve0Greatness', 'Blog')
       .then((pages) => {
-        pages.map((page) => page.path.slice(0, -5))
-        .forEach((page) => {
-          pui = page;
-          page = page.replace(/-/g, ' ');
+        pages.map((pui) => pui.path.slice(0, -5))
+        .forEach((pui) => {
+          page = pui.replace(/-/g, ' ');
           document.getElementById('foo').innerHTML += '<div><a href="/'pui'.html">'page'</a></div>';
         });
     });
