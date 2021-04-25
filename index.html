@@ -36,10 +36,11 @@
     }
     getPages('Steve0Greatness', 'Blog')
       .then((pages) => {
-        pages.map((pui) => pui.path.slice(0, -5))
-        .forEach((pui) => {
-          page = pui.replace(/-/g, ' ');
-          document.getElementById('foo').innerHTML += '<div><a href="/'pui'.html">'page'</a></div>';
+        pages.map((page) => page.path.slice(0, -5))
+        .forEach((page) => {
+          if(page == 'index') page = 'home';
+          page = page.replace(/-/g, ' ');
+          document.getElementById('contents').innerHTML += page[0].toUpperCase() + page.slice(1) + '<a href="Steve0greatness.github.io"';
         });
     });
   </script>
