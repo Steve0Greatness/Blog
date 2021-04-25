@@ -40,7 +40,7 @@
         .forEach((page) => {
           if(page == 'index') page = 'index';
           page = page.replace(/-/g, ' ');
-          document.getElementById('foo').innerHTML += '<a href="/{page}.html">{page}</a>';
+          document.getElementById('foo').innerHTML += '<div><a href="/'page'.html">'page'</a></div>';
         });
     });
   </script>
