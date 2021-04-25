@@ -21,7 +21,7 @@
 </style>
 <!-- code by @Raihan142857(on Scratch), I dont know JS so this was a major help -->
 <script type="text/Javascript">
-      function getPages(username, reponame, branch = 'main') {
+    function getPages(username, reponame, branch = 'main') {
       return new Promise((resolve, reject) => {
         fetch(`https://api.github.com/repos/${username}/${reponame}/git/trees/${branch}?recursive=1`)
         .then((resp) => resp.json())
@@ -39,6 +39,6 @@
           var page
           page = pui.replace(/-/g, ' ');
           document.getElementById('foo').innerHTML += '<div><a href="https://scratch.mit.edu/users/steve0greatness"';
-        }
+        };
     });
   </script>
