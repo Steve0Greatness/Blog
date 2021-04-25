@@ -40,7 +40,7 @@
         .forEach((page) => {
           if(page == 'index') page = 'index';
           page = page.replace(/-/g, ' ');
-          document.getElementById('contents').innerHTML += page[0].toUpperCase() + page.slice(1) + '<a href="/'page'.html">'page'</a>';
+          document.getElementById('contents').innerHTML += page[0].toUpperCase() + page.slice(1) + '<a href="/{page}.html">';
         });
     });
   </script>
