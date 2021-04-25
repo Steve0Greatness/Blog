@@ -38,8 +38,9 @@
       .then((pages) => {
         pages.map((page) => page.path.slice(0, -5))
         .forEach((page) => {
+          pageid = page 
           page = page.replace(/-/g, ' ');
-          document.getElementById('foo').innerHTML += '<div><a href="/'page'.html">'page'</a></div>';
+          document.getElementById('foo').innerHTML += '<div><a href="/'pageid'.html">'page'</a></div>';
         });
     });
   </script>
