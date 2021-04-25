@@ -38,7 +38,7 @@
       .then((pages) => {
         pages.map((page) => page.path.slice(0, -5))
         .forEach((page) => {
-          if(page == 'index') page = '';
+          if(page == 'index') page = 'index';
           page = page.replace(/-/g, ' ');
           document.getElementById('contents').innerHTML += page[0].toUpperCase() + page.slice(1) + '<a href="/'page'.html">'page'</a>';
         });
