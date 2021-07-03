@@ -1,3 +1,7 @@
+if (localStorage.getItem('theme') == null || localStorage.getItem('theme') == '') {
+  localStorage.setItem('theme', 'n')
+  document.getElementById('page').className = 'n'
+}
 //code made by Raihan142857 on Scratch
 function getPages(username, reponame, branch = 'main') {
   return new Promise((resolve, reject) => {
@@ -25,7 +29,7 @@ document.body.appendChild(script)
 
 console.log(pageUrl, pageUrl.includes('blog.stevesgreatness.repl.co'))
 if (pageUrl.includes('blog.stevesgreatness.repl.co')) {
-  var note = document.createElement('div')
+  var note = document.createElement('p')
   note.className = 'notice'
   note.innerHTML = `this is a not properly working version of the blog(dark mode, among other things doesn't work), i'd suggest switching to <a href="https://steve0greatness.github.io/Blog/">the main site</a> for it to work properly`
   document.body.appendChild(note)
