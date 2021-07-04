@@ -31,8 +31,8 @@ console.log(pageUrl, pageUrl.includes('blog.stevesgreatness.repl.co'))
 if (pageUrl.includes('blog.stevesgreatness.repl.co')) {
   var note = document.createElement('p')
   note.className = 'notice'
-  note.innerHTML = `this is a not properly working version of the blog(dark mode, among other things doesn't work), i'd suggest switching to <a href="https://steve0greatness.github.io/Blog/">the main site</a> for it to work properly`
+  note.innerHTML = `this is a not properly working version of the blog(keeping theme throughout the whole site, among other things, doesn't work), i'd suggest switching to <a href="https://steve0greatness.github.io/Blog${window.location.pathname}">the main site</a> for it to work properly`
   document.body.appendChild(note)
   console.warn(`this version of the site doesn't have everything working properly(at least not yet)
-  it would be a good idea to switch to https://steve0greatness.github.io/Blog`)
+  it would be a good idea to switch to https://steve0greatness.github.io/Blog${window.location.pathname}`)
 }
