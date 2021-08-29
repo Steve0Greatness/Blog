@@ -1,38 +1,35 @@
-if (localStorage.getItem('theme') == null || localStorage.getItem('theme') == '') {
-  localStorage.setItem('theme', 'n')
-  document.getElementById('page').className = 'n'
-}
-//code made by Raihan142857 on Scratch
-function getPages(username, reponame, branch = 'main') {
-  return new Promise((resolve, reject) => {
-    fetch(`https://api.github.com/repos/${username}/${reponame}/git/trees/${branch}?recursive=1`)
-    .then((resp) => resp.json())
-    .then(({tree}) => {
-      const pages = tree.filter((file) => file.path.endsWith('.html'));
-      resolve(pages);
-    })
-    .catch(reject)
-  });
-}
-getPages('Steve0Greatness', 'Blog').then((pages) => {pages.map((pui) => pui.path.slice(0, -5)).forEach((pui) => {var page; page = pui.replace(/-/g, ' ');if(pui != 'index') document.getElementById('index').innerHTML += '<div><a href="./' + pui + '.html">' + page + '</a></div>';})});
-//Thanks for thier help!
+fetch('/src/blog.json')
+	.then(response => response.json())
+	.then(data => {
+		let hash = window.location.search
+		console.log(hash)
+		let names = ["Why-inspect-element-is-a-useful-tool", "How-To-make-mockups", "How-to-copy-and-paste-on-mobile", "dividing-by-0"]
+		let content = document.getElementById('content')
+		for (let i = 0; i < names.length; i++) {
+			let x = data[names[i]]
+			var ind = document.getElementById('index')
+			console.log(i, names[i], x)
+			ind.innerHTML = ind.innerHTML + `<a href="?${names[i]}">${names[i]}</a> <span style="padding-left: 15px;">${x["pD"]}</span> <br>`
+		}
+		if (hash != null || hash != "") {
+			if (names.indexOf(hash.slice(1)) != -1) {
+				content.innerHTML = data[hash.slice(1)]["pC"]
+				ind.innerHTML = ind.innerHTML + "<a href='?'>- back</a>"
+			}
+		}
+	});
 
+
+if (localStorage.getItem('theme') == null || localStorage.getItem('theme') == '') {
+	localStorage.setItem('theme', 'n')
+	document.getElementById('page').className = 'n'
+}
 var pageUrl = window.location.origin
 var script = document.createElement('script')
 script.type = "text/javascript"
-if (pageUrl.includes('repl.co')) {
-  script.src = "https://steve0greatnessgithubio.stevesgreatness.repl.co/src/script.js"
+if (pageUrl.includes('blog.stevesgreatness.repl.co') || pageUrl.includes('50df31f3-e736-4345-9548-ac30d4a0dadc.id.repl.co')) {
+	script.src = "https://steve0greatnessgithubio.stevesgreatness.repl.co/src/script.js"
 } else {
-  script.src = "../src/script.js"
+	script.src = "../src/script.js"
 }
 document.body.appendChild(script)
-
-console.log(pageUrl, pageUrl.includes('blog.stevesgreatness.repl.co'))
-if (pageUrl.includes('blog.stevesgreatness.repl.co')) {
-  var note = document.createElement('p')
-  note.className = 'notice'
-  note.innerHTML = `this is a not properly working version of the blog(keeping theme throughout the whole site, among other things, doesn't work), i'd suggest switching to <a href="https://steve0greatness.github.io/Blog${window.location.pathname}">the main site</a> for it to work properly`
-  document.body.appendChild(note)
-  console.warn(`this version of the site doesn't have everything working properly(at least not yet)
-  it would be a good idea to switch to https://steve0greatness.github.io/Blog${window.location.pathname}`)
-}
