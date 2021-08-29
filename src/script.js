@@ -1,4 +1,4 @@
-fetch('/src/blog.json')
+fetch('./src/blog.json')
 	.then(response => response.json())
 	.then(data => {
 		let hash = window.location.search
