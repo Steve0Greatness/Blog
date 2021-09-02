@@ -1,9 +1,9 @@
-fetch('/src/blog.json')
+fetch('./src/blog.json')
 	.then(response => response.json())
 	.then(data => {
 		let hash = window.location.search
 		console.log(hash)
-		let names = ["Why-inspect-element-is-a-useful-tool", "How-To-make-mockups", "How-to-copy-and-paste-on-mobile", "dividing-by-0"]
+		let names = ["Why-inspect-element-is-a-useful-tool", "How-To-make-mockups", "How-to-copy-and-paste-on-mobile", "dividing-by-0", "What-about-the-second-site?"]
 		let content = document.getElementById('content')
 		for (let i = 0; i < names.length; i++) {
 			let x = data[names[i]]
