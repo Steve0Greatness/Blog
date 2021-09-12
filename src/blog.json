@@ -23,5 +23,10 @@
 		"pD": "Sep 1, 2021",
 		"fT": "html",
 		"pC": "So you may know about <a href=\"https:\/\/stevesgreatness.repl.co\">StevesGreatness.Repl.Co<\/a>, or, the second site.<br>It contains more than what this one does, but also less. It doesn't have a blog, information about my alts on Scratch, or even addition projects. However, it does have a page for testing, an about me, a list of my accounts on other sites, and a list of my repls(which I want to eventually turn into a list of my repos, and Scratch projects as well)."
+	},
+	"Changing_the_Dark-mode": {
+		"pD": "Sep 11, 2021",
+		"fT": "html",
+		"pC": "As of currently, the light mode on this site doesn't live up to what I want it to be.<br>I want it to be something that is the opposite of the dark mode, and it really isn't that. Expect it to change. But, in case you do still want to view it, here are the current css variable colors:<br><pre><code>html.l {--navCo: #0F0089;--headCo: #3700FF;--linkCo: #F7E45D;--maCo: #0044F7;--maTxtCo: #C2FFBA;--buCo: #F09;--buTxtCo: #0FF;--buBoCo: #fff;--noteCo: #f25;--noteTxtCo: #ccc;--inCo: #0bf;--inlinkCo: #05c;--selCo: #f51;--selTxtCo: #059;<br>--taCo: #cf4;--taTxtCo: black;}</code></pre>"
 	}
 }
